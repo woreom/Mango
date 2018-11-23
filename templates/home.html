@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Welcome, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
-  <p>Thanks for confirming your email address!</p>
+    <h2 id="id_first_name">{{ user.first_name }} </h2><h2 id="id_last_name">{{ user.last_name }} </h2><small id="id_username">{{ user.username }}</small>!
+    <small id="id_bio">{{ user.profile.bio }} </small>{% if user.profile.gender == "M" %}
+                                                        <h2 id="id_gender">{{"مرد"}}</h2>
+                                                        {% else %}
+                                                        <h2 id="id_gender">{{ "زن" }}</h2>
+                                                        {% endif%}
+
+    <button id= "id_edit_profile"><a href="/profile/"> edit</a> </button>
 {% endblock %}
