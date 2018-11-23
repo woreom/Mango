@@ -73,13 +73,13 @@ def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        image_form=ImageUploadForm(request.POST)
+        # image_form=ImageUploadForm(request.POST)
         if user_form.is_valid() and profile_form.is_valid() and image_form.is_valid():
             user_form.save()
             profile_form.save()
-            m = ExampleModel.objects.get(pk=course_id)
-            m.model_pic = image_form.cleaned_data['image']
-            m.save()
+            # m = ExampleModel.objects.get(pk=course_id)
+            # m.model_pic = image_form.cleaned_data['image']
+            # m.save()
 #            messages.success(request, _('Your profile was successfully updated!'))
             return redirect('home')
 #        else:
@@ -87,11 +87,11 @@ def update_profile(request):
     else:
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
-        image_form=ImageUploadForm()
+        # image_form=ImageUploadForm()
     return render(request, 'profile.html', {
         'user_form': user_form,
         'profile_form': profile_form,
-        'image_form': image_form
+        # 'image_form': image_form
     })
 
 # def upload_pic(request):
