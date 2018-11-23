@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+    <head>
+        <style>
+        li {display:inline ; }
+        li a {text-decoration:none ; color:white ; background-color:black ; padding:15px 20px ;}
+        ul {text-align:center ; }
+    </style>
+	<meta charset="UTF-8">
+
+    </head>
+    <body>
+    <ul id="id_navbar">
+
+                <li><a id= "id_navbar_home" href="/" style="border-radius:0 20px 20px 0 ">صفحه اصلی </a></li>
+                <li><a id= "id_navbar_logout" href="/" style="border-radius:0 20px 20px 0 ">خروج</a></li>
+                <li><a id= "id_navbar_signup" href="{% url 'signup' %}">ثبت نام </a></li>
+                <li><a id= "id_navbar_login" href="{% redirect('home') %}">ورود </a></li>
+
+        </ul>
+
+</body>
+</html>
